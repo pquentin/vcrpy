@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Tests for cassettes with custom persistence"""
 
 # External imports
@@ -10,7 +9,7 @@ import vcr
 from vcr.persisters.filesystem import FilesystemPersister
 
 
-class CustomFilesystemPersister(object):
+class CustomFilesystemPersister:
     """Behaves just like default FilesystemPersister but adds .test extension
     to the cassette file"""
 

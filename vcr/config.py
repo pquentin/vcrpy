@@ -6,8 +6,6 @@ import types
 from collections import abc as collections_abc
 from pathlib import Path
 
-import six
-
 from . import filters, matchers
 from .cassette import Cassette
 from .persisters.filesystem import FilesystemPersister
@@ -88,7 +86,7 @@ class VCR:
         try:
             serializer = self.serializers[serializer_name]
         except KeyError:
-            raise KeyError("Serializer {} doesn't exist or isn't registered".format(serializer_name))
+            raise KeyError(f"Serializer {serializer_name} doesn't exist or isn't registered")
         return serializer
 
     def _get_matchers(self, matcher_names):
@@ -97,7 +95,7 @@ class VCR:
             for m in matcher_names:
                 matchers.append(self.matchers[m])
         except KeyError:
-            raise KeyError("Matcher {} doesn't exist or isn't registered".format(m))
+            raise KeyError(f"Matcher {m} doesn't exist or isn't registered")
         return matchers
 
     def use_cassette(self, path=None, **kwargs):
@@ -253,5 +251,4 @@ class VCR:
 
     def test_case(self, predicate=None):
         predicate = predicate or self.is_test_method
-        # TODO: Remove this reference to `six` in favor of the Python3 equivalent
-        return six.with_metaclass(auto_decorate(self.use_cassette, predicate))
+        return auto_decorate(self.use_cassette, predicate)

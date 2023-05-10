@@ -9,31 +9,31 @@ log = logging.getLogger(__name__)
 
 
 def method(r1, r2):
-    assert r1.method == r2.method, "{} != {}".format(r1.method, r2.method)
+    assert r1.method == r2.method, f"{r1.method} != {r2.method}"
 
 
 def uri(r1, r2):
-    assert r1.uri == r2.uri, "{} != {}".format(r1.uri, r2.uri)
+    assert r1.uri == r2.uri, f"{r1.uri} != {r2.uri}"
 
 
 def host(r1, r2):
-    assert r1.host == r2.host, "{} != {}".format(r1.host, r2.host)
+    assert r1.host == r2.host, f"{r1.host} != {r2.host}"
 
 
 def scheme(r1, r2):
-    assert r1.scheme == r2.scheme, "{} != {}".format(r1.scheme, r2.scheme)
+    assert r1.scheme == r2.scheme, f"{r1.scheme} != {r2.scheme}"
 
 
 def port(r1, r2):
-    assert r1.port == r2.port, "{} != {}".format(r1.port, r2.port)
+    assert r1.port == r2.port, f"{r1.port} != {r2.port}"
 
 
 def path(r1, r2):
-    assert r1.path == r2.path, "{} != {}".format(r1.path, r2.path)
+    assert r1.path == r2.path, f"{r1.path} != {r2.path}"
 
 
 def query(r1, r2):
-    assert r1.query == r2.query, "{} != {}".format(r1.query, r2.query)
+    assert r1.query == r2.query, f"{r1.query} != {r2.query}"
 
 
 def raw_body(r1, r2):
@@ -49,7 +49,7 @@ def body(r1, r2):
 
 
 def headers(r1, r2):
-    assert r1.headers == r2.headers, "{} != {}".format(r1.headers, r2.headers)
+    assert r1.headers == r2.headers, f"{r1.headers} != {r2.headers}"
 
 
 def _header_checker(value, header="Content-Type"):

@@ -45,7 +45,6 @@ class PyTest(TestCommand):
 install_requires = [
     "PyYAML",
     "wrapt",
-    "six>=1.5",
     "yarl",
 ]
 
@@ -59,7 +58,7 @@ setup(
     author_email="me@kevinmccarthy.org",
     url="https://github.com/kevin1024/vcrpy",
     packages=find_packages(exclude=["tests*"]),
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     install_requires=install_requires,
     license="MIT",
     tests_require=["pytest", "mock", "pytest-httpbin"],
@@ -69,7 +68,6 @@ setup(
         "Intended Audience :: Developers",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",

@@ -335,7 +335,7 @@ def test_decoration_should_respect_function_return_value():
     assert ret == function_with_return()
 
 
-class TestVCRClass(VCR().test_case()):
+class TestVCRClass(VCR()):
     def no_decoration(self):
         assert httplib.HTTPConnection == _HTTPConnection
         self.test_dynamically_added()
